@@ -17,3 +17,11 @@ double get_normal_rand(double start, double end)
 	double ret = dis(gen);
 	return ret;
 }
+
+// ---------------new-----------------------
+
+bool myFuntionForSort(Bird& first, Bird& second) 
+{
+	return first.fitness_now < second.fitness_now;
+}
+// ---------------new------------------------

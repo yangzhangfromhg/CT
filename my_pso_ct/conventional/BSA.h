@@ -15,6 +15,7 @@ public:
 	int * Evolve();
 	void SetConfig(int par, int ite, double c1, double c2, double a1, double a2, int FQ);
 	void setMaxMinBirdSumFitBirdMean(std::vector<Bird> * T);
+	void mySort(std::vector<Bird> *T);
 	void clear();
 public:
 	int maxindex, minindex; //最好和最坏的小鸟索引

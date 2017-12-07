@@ -1,3 +1,5 @@
+#ifndef _BIRD
+#define _BIRD
 #include<cmath>
 #include<random>
 #include<ctime>
@@ -51,3 +53,4 @@ public:
 	//scrounge
 	void scrounge(int* bird_k_pbest,double FL);
 };
+#endif // !_BIRD

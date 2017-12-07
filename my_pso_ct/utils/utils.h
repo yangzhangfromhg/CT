@@ -5,3 +5,5 @@ double get_uniform_rand(double start, double end);
 
 // same as below normal distribution
 double get_normal_rand(double start, double end);
+
+bool myFuntionForSort(Bird& first, Bird& second); // -------new -------------

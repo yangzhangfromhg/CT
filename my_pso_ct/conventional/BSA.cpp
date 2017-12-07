@@ -69,6 +69,11 @@ void BSA::clear()
 	delete[] bird_mean;
 }
 
+void BSA::mySort(std::vector<Bird>* T)
+{
+	std::sort(T->begin(), T->end(), myFuntionForSort);
+}
+
 int* BSA::Evolve() 
 {
 	int *best =new int[sut->parameter];
@@ -175,7 +180,7 @@ int* BSA::Evolve()
 		else 
 		{
 			// producer and scrounge
-			
+			/*
 			int choose = 0;
 			if (minindex < 0.5 * config.population && maxindex < 0.5 * config.population) 
 			{
@@ -237,6 +242,32 @@ int* BSA::Evolve()
 				}
 				//std::cout << ">= 3 bird scrounge out" << std::endl;
 			}
+			*/
+			
+			mySort(&T);
+			int restart = int(config.population * 0.25); //producer;
+			int levy_dis = restart + int(config.population * 0.25); // producer
+			int half_index = int(config.population * 0.5);  // scrouge
+			for (int i = 0; i < config.population; i++) 
+			{				
+				if (i < restart) 
+				{
+					Bird bird(sut->parameter, sut->value);
+					bird.randomInit();
+					T[i] = bird;
+				}
+				else if (i >= restart && i < half_index) 
+				{
+					T[i].producer();
+				}
+				else 
+				{
+					double FL = ((double)(rand() % 1000) / 1000.0) * 0.4 + 0.5;
+					int k = int(((double)(rand() % 1000) / 1000.0) * config.population * 0.5);
+					T[i].scrounge(T[k].pbest, FL);
+				}
+			}
+			
 		}// 行为终止
 		//更新迭代次数
 		it++;
