@@ -1,5 +1,5 @@
 #include<random>
-
+#include"../conventional/Bird.h"
 //generate specified domain random number  unifrom distribution
 double get_uniform_rand(double start, double end);
 

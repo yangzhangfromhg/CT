@@ -1,4 +1,5 @@
 #include<vector>
+#include<algorithm>
 #include"../common/PSO.h"
 #include"Bird.h"
 #include"../utils/utils.h"
