@@ -3,6 +3,9 @@
 #include<cmath>
 #include<random>
 #include<ctime>
+#include<cfloat>
+
+#include"../utils/utils.h"
 
 #define pi 3.1415926
 

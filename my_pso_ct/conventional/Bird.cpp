@@ -1,8 +1,4 @@
-
-#include<cfloat>
-
 #include"Bird.h"
-#include"../utils/utils.h"
 
 void Bird::clear() 
 {
